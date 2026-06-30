@@ -144,11 +144,16 @@ const {
                 }
             }
 
+            const closeMenuBtnInner = document.getElementById('close-menu-btn-inner');
+
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', toggleMenu);
             }
             if (mobileMenuBackdrop) {
                 mobileMenuBackdrop.addEventListener('click', toggleMenu);
+            }
+            if (closeMenuBtnInner) {
+                closeMenuBtnInner.addEventListener('click', toggleMenu);
             }
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
