@@ -1,9 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Outer concentric circle (gold) -->
+    <circle cx="50" cy="50" r="48" stroke="#D4AF37" stroke-width="2.5" fill="#113a29" />
+    <!-- Inner concentric circle (gold) -->
+    <circle cx="50" cy="50" r="43" stroke="#D4AF37" stroke-width="1" stroke-dasharray="3 3" />
+    
+    <!-- Dome silhouette (gold outline, dark forest green fill) -->
+    <path d="M50 18 C56 30, 68 34, 68 46 L32 46 C32 34, 44 30, 50 18 Z" fill="#092218" stroke="#D4AF37" stroke-width="1.8" />
+    <!-- Dome top spire -->
+    <line x1="50" y1="18" x2="50" y2="10" stroke="#D4AF37" stroke-width="1.8" />
+    <!-- Crescent moon -->
+    <path d="M49 9 A 3 3 0 1 1 52.5 12 A 2.5 2.5 0 1 0 49 9" fill="#D4AF37" />
+    
+    <!-- Open Book (Al-Quran) underneath the dome -->
+    <!-- Left page -->
+    <path d="M50 56 C44 52, 35 52, 27 55 L27 67 C35 64, 44 64, 50 68 Z" fill="#ffffff" stroke="#D4AF37" stroke-width="1.2" />
+    <!-- Right page -->
+    <path d="M50 56 C56 52, 65 52, 73 55 L73 67 C65 64, 56 64, 50 68 Z" fill="#ffffff" stroke="#D4AF37" stroke-width="1.2" />
+    <!-- Book lines (details) -->
+    <path d="M32 59 C37 57, 43 58, 47 60" stroke="#113a29" stroke-width="0.6" />
+    <path d="M68 59 C63 57, 57 58, 53 60" stroke="#113a29" stroke-width="0.6" />
+    <path d="M32 63 C37 61, 43 62, 47 64" stroke="#113a29" stroke-width="0.6" />
+    <path d="M68 63 C63 61, 57 62, 53 64" stroke="#113a29" stroke-width="0.6" />
+    
+    <!-- Ribbons/Decorative base -->
+    <path d="M20 76 Q50 83 80 76 L77 81 Q50 88 23 81 Z" fill="#D4AF37" />
+    
+    <!-- Stars (gold) -->
+    <polygon points="26,24 27,27 30,27 28,29 29,32 26,30 23,32 24,29 22,27 25,27" fill="#D4AF37" />
+    <polygon points="74,24 75,27 78,27 76,29 77,32 74,30 71,32 72,29 70,27 73,27" fill="#D4AF37" />
+    <polygon points="50,4 51,7 54,7 52,9 53,12 50,10 47,12 48,9 46,7 49,7" fill="#D4AF37" />
 </svg>
