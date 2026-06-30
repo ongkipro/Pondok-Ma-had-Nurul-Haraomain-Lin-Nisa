@@ -15,24 +15,24 @@ const lifeSkills = [
 ];
 ---
 <!-- Unique Programs & Life Skills (Verticulture TETRIS & Creative Industry) -->
-<section class="py-24 bg-white">
+<section class="py-12 md:py-16 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-            <span class="text-gold font-semibold text-sm tracking-widest uppercase mb-4 block">Kemandirian & Keterampilan</span>
-            <h2 class="font-heading text-4xl text-primary mb-6">Program Unggulan Keterampilan</h2>
-            <p class="text-muted">Kami mendesain program kemandirian praktis untuk melengkapi kecakapan santriwati di era modern.</p>
+        <div class="text-left md:text-center max-w-2xl mx-auto mb-10 md:mb-16 reveal">
+            <span class="text-gold font-semibold text-xs md:text-sm tracking-widest uppercase mb-3 block">Kemandirian & Keterampilan</span>
+            <h2 class="font-heading text-3xl md:text-4xl text-primary mb-4 md:mb-6">Program Unggulan Keterampilan</h2>
+            <p class="text-muted text-sm md:text-base">Kami mendesain program kemandirian praktis untuk melengkapi kecakapan santriwati di era modern.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {lifeSkills.map((ls) => {
                 const IconComp = ls.icon;
                 return (
-                    <div class="bg-background rounded-3xl p-8 border border-border/50 shadow-premium flex gap-6 reveal">
-                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary border border-border shrink-0 shadow-sm">
+                    <div class="bg-transparent md:bg-background rounded-3xl p-0 md:p-8 border-0 md:border md:border-border/50 shadow-none md:shadow-premium flex gap-4 md:gap-6 border-b md:border-b-0 border-border/10 pb-6 md:pb-8 last:border-0 last:pb-0 reveal">
+                        <div class="w-12 h-12 bg-primary/10 md:bg-white rounded-2xl flex items-center justify-center text-primary border-0 md:border md:border-border shrink-0 md:shadow-sm">
                             <IconComp class="w-6 h-6" />
                         </div>
                         <div>
-                            <h3 class="font-heading text-2xl font-bold text-primary mb-3">{ls.title}</h3>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-primary mb-2 md:mb-3 leading-tight">{ls.title}</h3>
                             <p class="text-sm text-muted leading-relaxed">{ls.description}</p>
                         </div>
                     </div>
