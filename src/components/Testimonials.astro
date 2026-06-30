@@ -1,48 +1,61 @@
 ---
+const testimonials = [
+  {
+    name: "Bapak Arief",
+    program: "Wali Santri Program Tahfidz",
+    text: "Alhamdulillah, sejak mondok di sini, perubahan adab putri kami sangat terlihat. Hafalannya lancar berkat bimbingan intensif yang disiplin namun penuh rasa kasih sayang.",
+    rating: 5
+  },
+  {
+    name: "Ibu Fatimah",
+    program: "Wali Santri Madrasah Aliyah",
+    text: "Lingkungan asrama di Pujon sangat sejuk dan aman. Saya merasa sangat tenang menitipkan putri kami di asrama yang bersih dan terjaga secara islami.",
+    rating: 5
+  },
+  {
+    name: "Bapak Susanto",
+    program: "Wali Santri Madrasah Diniyyah",
+    text: "Perpaduan pelajaran kitab salaf dan keahlian keputrian seperti agribisnis minimalis (TETRIS) sangat mendidik kemandirian anak kami untuk masa depannya.",
+    rating: 5
+  }
+];
 ---
 <!-- Testimonials -->
-<section class="py-24 bg-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 mb-16 text-center reveal">
-        <span class="text-gold font-semibold text-sm tracking-widest uppercase mb-4 block">Bukti Nyata</span>
-        <h2 class="font-heading text-4xl md:text-5xl text-primary">Apa Kata Wali Santri?</h2>
+<section class="py-12 md:py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-16 text-left md:text-center reveal">
+        <span class="text-gold font-semibold text-xs md:text-sm tracking-widest uppercase mb-3 block">Bukti Nyata</span>
+        <h2 class="font-heading text-3xl md:text-5xl text-primary">Apa Kata Wali Santri?</h2>
     </div>
     
-    <!-- Horizontal Scroll Container -->
-    <div class="flex gap-6 overflow-x-auto pb-8 hide-scrollbar px-6 md:px-12 snap-x snap-mandatory max-w-7xl mx-auto">
-        <!-- Card 1 -->
-        <div class="shrink-0 w-[300px] md:w-[400px] snap-center bg-background p-8 rounded-2xl shadow-sm border border-border/50 reveal">
-            <div class="flex text-gold mb-4 gap-1">
-                {[1,2,3,4,5].map(() => <span class="text-lg">★</span>)}
+    <!-- Mobile view: Flat vertical stacked list rows (No cards, no borders, no horizontal scroll) -->
+    <div class="block md:hidden max-w-xl mx-auto px-6 space-y-6 reveal">
+        {testimonials.map((t) => (
+            <div class="border-b border-border/10 pb-6 last:border-b-0 last:pb-0">
+                <div class="flex text-gold mb-2 gap-1">
+                    {Array.from({ length: t.rating }).map(() => <span class="text-base">★</span>)}
+                </div>
+                <p class="text-muted italic text-sm leading-relaxed mb-3">"{t.text}"</p>
+                <div>
+                    <h4 class="font-semibold text-primary text-sm">{t.name}</h4>
+                    <p class="text-xs text-muted/80">{t.program}</p>
+                </div>
             </div>
-            <p class="text-muted italic mb-6">"Alhamdulillah, sejak mondok di sini, perubahan adab putri kami sangat terlihat. Hafalannya lancar berkat bimbingan intensif yang disiplin namun penuh rasa kasih sayang."</p>
-            <div>
-                <h4 class="font-semibold text-primary">Bapak Arief</h4>
-                <p class="text-xs text-muted">Wali Santri Program Tahfidz</p>
+        ))}
+    </div>
+    
+    <!-- Desktop view: Horizontal Scroll Container -->
+    <div class="hidden md:flex gap-6 overflow-x-auto pb-8 hide-scrollbar px-6 md:px-12 snap-x snap-mandatory max-w-7xl mx-auto reveal">
+        {testimonials.map((t, index) => (
+            <div class={`shrink-0 w-[400px] snap-center bg-background p-8 rounded-2xl shadow-sm border border-border/50 ${index === 1 ? 'reveal-delay-1' : index === 2 ? 'reveal-delay-2' : ''}`}>
+                <div class="flex text-gold mb-4 gap-1">
+                    {Array.from({ length: t.rating }).map(() => <span class="text-lg">★</span>)}
+                </div>
+                <p class="text-muted italic mb-6">"{t.text}"</p>
+                <div>
+                    <h4 class="font-semibold text-primary">{t.name}</h4>
+                    <p class="text-xs text-muted">{t.program}</p>
+                </div>
             </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="shrink-0 w-[300px] md:w-[400px] snap-center bg-background p-8 rounded-2xl shadow-sm border border-border/50 reveal reveal-delay-1">
-            <div class="flex text-gold mb-4 gap-1">
-                {[1,2,3,4,5].map(() => <span class="text-lg">★</span>)}
-            </div>
-            <p class="text-muted italic mb-6">"Lingkungan asrama di Pujon sangat sejuk dan aman. Saya merasa sangat tenang menitipkan putri kami di asrama yang bersih dan terjaga secara islami."</p>
-            <div>
-                <h4 class="font-semibold text-primary">Ibu Fatimah</h4>
-                <p class="text-xs text-muted">Wali Santri Madrasah Aliyah</p>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="shrink-0 w-[300px] md:w-[400px] snap-center bg-background p-8 rounded-2xl shadow-sm border border-border/50 reveal reveal-delay-2">
-            <div class="flex text-gold mb-4 gap-1">
-                {[1,2,3,4,5].map(() => <span class="text-lg">★</span>)}
-            </div>
-            <p class="text-muted italic mb-6">"Perpaduan pelajaran kitab salaf dan keahlian keputrian seperti agribisnis minimalis (TETRIS) sangat mendidik kemandirian anak kami untuk masa depannya."</p>
-            <div>
-                <h4 class="font-semibold text-primary">Bapak Susanto</h4>
-                <p class="text-xs text-muted">Wali Santri Madrasah Diniyyah</p>
-            </div>
-        </div>
+        ))}
     </div>
 </section>
