@@ -77,12 +77,12 @@ const {
     <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-border/40 z-40 md:hidden pb-safe shadow-premium px-4 py-2">
         <div class="flex items-center justify-around text-center max-w-md mx-auto">
             <!-- Tab Home -->
-            <a href="/" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-primary hover:text-gold transition-colors py-1 px-3">
+            <a href="/" data-path="/" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-gold transition-colors py-1 px-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                 <span>Beranda</span>
             </a>
             <!-- Tab Program -->
-            <a href="/kurikulum" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-primary transition-colors py-1 px-3">
+            <a href="/kurikulum" data-path="/kurikulum" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-primary transition-colors py-1 px-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path></svg>
                 <span>Program</span>
             </a>
@@ -91,12 +91,12 @@ const {
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
             </a>
             <!-- Tab Masyayikh -->
-            <a href="/tentang" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-primary transition-colors py-1 px-3">
+            <a href="/tentang" data-path="/tentang" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-primary transition-colors py-1 px-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 <span>Pengasuh</span>
             </a>
             <!-- Tab Kehidupan/Asrama -->
-            <a href="/kehidupan-asrama" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-primary transition-colors py-1 px-3">
+            <a href="/kehidupan-asrama" data-path="/kehidupan-asrama" class="mobile-tab flex flex-col items-center gap-1 text-[9px] font-semibold text-muted hover:text-primary transition-colors py-1 px-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
                 <span>Asrama</span>
             </a>
@@ -144,17 +144,18 @@ const {
                 });
             });
 
-            // Mobile Navigation Active States
+            // Mobile Navigation Active States based on Pathname
             const tabs = document.querySelectorAll('.mobile-tab');
+            const currentPath = window.location.pathname;
             tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => {
-                        t.classList.remove('text-primary');
-                        t.classList.add('text-muted');
-                    });
-                    tab.classList.remove('text-muted');
+                const tabPath = tab.getAttribute('data-path');
+                if (tabPath === '/' ? currentPath === '/' : currentPath.startsWith(tabPath)) {
                     tab.classList.add('text-primary');
-                });
+                    tab.classList.remove('text-muted');
+                } else {
+                    tab.classList.add('text-muted');
+                    tab.classList.remove('text-primary');
+                }
             });
 
             // 2. Header Scroll Effect
