@@ -5,10 +5,25 @@ import PPDB from '../components/PPDB.astro';
 ---
 
 <Layout title="Hubungi Kami - Ma'had Nurul Haromain Lin Nisa'" description="Kontak resmi, nomor telepon WhatsApp layanan informasi, alamat lengkap di Pujon, Malang, dan rute lokasi Google Maps Ma'had Nurul Haromain.">
-    <!-- Header Banner -->
-    <div class="pt-24 bg-primary text-white text-center py-16">
-        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
-        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base px-6">Sekretariat kami siap membantu menjawab pertanyaan Anda secara langsung melalui layanan WhatsApp, telepon, email, atau kunjungan langsung.</p>
+    <!-- Subpage Hero Banner -->
+    <div class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-primary text-white overflow-hidden text-center">
+        <!-- Background Image with deep tint overlay -->
+        <img src="/images/cta-mosque.jpg" alt="Hubungi Kami" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.25] contrast-[1.05] pointer-events-none">
+        
+        <!-- Subtle dark green gradient blend -->
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/80 to-primary pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <!-- Breadcrumbs -->
+            <nav class="flex justify-center items-center gap-2 mb-4 text-xs font-semibold text-white/60">
+                <a href="/" class="hover:text-gold transition-colors">Beranda</a>
+                <span class="text-white/30">/</span>
+                <span class="text-gold">Hubungi Kami</span>
+            </nav>
+            
+            <h1 class="font-heading text-3xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight">Hubungi Kami</h1>
+            <p class="text-white/80 max-w-xl mx-auto text-xs md:text-sm leading-relaxed">Sekretariat kami siap membantu menjawab pertanyaan Anda secara langsung melalui layanan WhatsApp, telepon, email, atau kunjungan langsung.</p>
+        </div>
     </div>
 
     <!-- Map & Contact Info Section -->
