@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PPDB from '../components/PPDB.astro';
-import { Camera } from '@lucide/astro';
+import { Camera, ZoomIn } from '@lucide/astro';
 
 const categories = [
   { id: "all", name: "Semua Foto" },
@@ -11,54 +11,80 @@ const categories = [
   { id: "ekstra", name: "Ekstrakurikuler" }
 ];
 
-const galleryPlaceholders = [
+const galleryItems = [
   {
-    title: "Kajian Kitab Kuning Sore Hari",
-    category: "kegiatan",
-    description: "Santriwati mengkaji kitab fiqih wanita bersama ustazah di pendopo."
-  },
-  {
-    title: "Praktik Laboratorium Komputer SMK",
-    category: "kegiatan",
-    description: "Praktik perakitan jaringan telekomunikasi dan pemrograman dasar."
-  },
-  {
-    title: "Kamar Tidur Asrama Putri",
+    src: "/images/history-building.jpg",
+    title: "Gedung Utama Ma'had",
     category: "fasilitas",
-    description: "Kondisi kamar tidur asrama putri yang rapi, bersih, dan berudara sejuk."
+    description: "Arsitektur kubah hijau khas Ma'had dengan latar belakang pegunungan Pujon yang asri."
   },
   {
-    title: "Klinik Medis Pratama",
+    src: "/images/scraped/mahad-scraped-3.jpg",
+    title: "Kajian Kitab Diniyah",
+    category: "kegiatan",
+    description: "Suasana santriwati menyimak kajian kitab turats fiqih wanita bersama ustazah."
+  },
+  {
+    src: "/images/scraped/mahad-scraped-4.jpg",
+    title: "Qiyamul Lail Berjamaah",
+    category: "kegiatan",
+    description: "Kekhusyukan santriwati dalam pembinaan ibadah malam shalat tahajud berjamaah di masjid."
+  },
+  {
+    src: "/images/about-library.jpg",
+    title: "Perpustakaan & Ruang Kitab",
     category: "fasilitas",
-    description: "Fasilitas klinik kesehatan khusus santriwati di komplek ma'had."
+    description: "Sudut membaca dengan ribuan koleksi kitab kuning klasik dan literatur sains umum."
   },
   {
-    title: "Makan Bersama (Mayoritas) Santri",
+    src: "/images/scraped/mahad-scraped-5.jpg",
+    title: "Momen Wisuda Santriwati",
     category: "kebersamaan",
-    description: "Tradisi makan bersama talam sebagai wujud ukhuwah islamiyah."
+    description: "Kebersamaan wisuda kelulusan santriwati madrasah diniyah bersama dewan guru."
   },
   {
-    title: "Praktik Vertikultur Sayur TETRIS",
-    category: "ekstra",
-    description: "Santriwati menanam sayuran organik menggunakan paralon vertikultur."
-  },
-  {
-    title: "Latihan Pidato Tiga Bahasa",
-    category: "ekstra",
-    description: "Kegiatan Tadribur Muhadloroh mingguan berbahasa Arab, Inggris, & Indonesia."
-  },
-  {
-    title: "Kunjungan Ziarah Masyayikh",
+    src: "/images/boarding-activities.jpg",
+    title: "Belajar Kelompok Terbuka",
     category: "kebersamaan",
-    description: "Dokumentasi kunjungan dan doa bersama dengan para masyayikh."
+    description: "Santriwati berdiskusi materi pelajaran di area taman terbuka yang sejuk dan asri."
+  },
+  {
+    src: "/images/scraped/mahad-scraped-6.jpg",
+    title: "Praktik Mengajar TPQ",
+    category: "ekstra",
+    description: "Bentuk pengabdian santriwati mengajar langsung baca tulis Al-Qur'an anak-anak di dusun sekitar."
+  },
+  {
+    src: "/images/about-santriwati.jpg",
+    title: "Hafalan Al-Qur'an Intensif",
+    category: "kegiatan",
+    description: "Santriwati fokus menghafalkan Al-Qur'an secara mandiri di serambi masjid."
+  },
+  {
+    src: "/images/scraped/mahad-scraped-7.jpg",
+    title: "Kreativitas Desain Busana",
+    category: "ekstra",
+    description: "Praktik merancang pola dan menjahit busana muslimah sebagai bekal wirausaha kelak."
+  },
+  {
+    src: "/images/scraped/mahad-scraped-10.jpg",
+    title: "Praktik Tani Vertikultur (TETRIS)",
+    category: "ekstra",
+    description: "Santriwati merawat sayur mayur organik pada paralon vertikultur program kemandirian pangan."
+  },
+  {
+    src: "/images/cta-mosque.jpg",
+    title: "Serambi Masjid Baitul Haromain",
+    category: "fasilitas",
+    description: "Keindahan marmer dan tiang lengkung masjid yang menjadi pusat tarbiyah santriwati."
   }
 ];
 ---
 
-<Layout title="Galeri Kegiatan & Fasilitas - Ma'had Nurul Haromain Lin Nisa'" description="Dokumentasi foto kegiatan belajar mengajar, sarana prasarana asrama, aktivitas kebersamaan santriwati, dan program ekstrakurikuler di Pujon, Malang.">
+<Layout title="Galeri Kegiatan & Fasilitas - Ma'had Nurul Haromain Lin Nisa'" description="Galeri foto otentik kegiatan belajar, sarana prasarana asrama, aktivitas kebersamaan, dan program ekstrakurikuler di Pujon, Malang.">
     <div class="pt-24 bg-primary text-white text-center py-16">
         <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Galeri Kegiatan</h1>
-        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base">Kilas visual kehidupan sehari-hari, sarana belajar, dan momen kebersamaan di pondok pesantren.</p>
+        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base">Kilas visual dokumentasi kehidupan sehari-hari, sarana belajar, dan momen kebersamaan di pondok pesantren.</p>
     </div>
 
     <section class="py-20 bg-white">
@@ -68,7 +94,7 @@ const galleryPlaceholders = [
                 {categories.map((c) => (
                     <button 
                         data-filter={c.id}
-                        class={`filter-btn px-6 py-2.5 rounded-full border text-sm font-medium transition-all duration-300 ${
+                        class={`filter-btn px-6 py-2.5 rounded-full border text-sm font-medium transition-all duration-300 cursor-pointer ${
                             c.id === "all" 
                             ? "bg-primary text-white border-primary shadow-sm" 
                             : "bg-background text-muted border-border/50 hover:border-gold/50 hover:text-primary"
@@ -79,26 +105,31 @@ const galleryPlaceholders = [
                 ))}
             </div>
 
-            <!-- Gallery Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto" id="gallery-grid">
-                {galleryPlaceholders.map((g) => (
+            <!-- Masonry Gallery Collage (Staggered Grid) -->
+            <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 [column-fill:_auto] max-w-7xl mx-auto" id="gallery-grid">
+                {galleryItems.map((g) => (
                     <div 
                         data-category={g.category}
-                        class="gallery-item bg-background rounded-3xl overflow-hidden border border-border/50 shadow-sm hover:shadow-premium-hover hover:border-gold/30 transition-all duration-500 flex flex-col justify-between reveal active group"
+                        class="gallery-item break-inside-avoid mb-6 bg-background rounded-3xl overflow-hidden border border-border/50 shadow-sm hover:shadow-premium-hover hover:border-gold/30 transition-all duration-500 flex flex-col justify-between reveal active group"
                     >
-                        <!-- Photo Placeholder -->
-                        <div class="aspect-[4/3] bg-primary/5 flex flex-col items-center justify-center text-gold/60 border-b border-border/30 relative overflow-hidden">
-                            <!-- Background decorative mesh -->
-                            <div class="absolute inset-0 bg-radial-gradient from-transparent to-primary/5 opacity-40"></div>
-                            
-                            <Camera class="w-10 h-10 mb-3 group-hover:scale-110 transition-transform duration-300" />
-                            <span class="text-xs uppercase tracking-widest font-semibold text-primary/50">Foto Belum Diunggah</span>
+                        <!-- Image Container with Zoom & Hover Effects -->
+                        <div class="relative overflow-hidden cursor-pointer aspect-auto">
+                            <img src={g.src} alt={g.title} class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none">
+                            <!-- Premium Image Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                <div class="w-full flex items-center justify-between text-white">
+                                    <span class="text-xs font-semibold tracking-wider uppercase bg-gold/20 backdrop-blur-sm border border-gold/30 px-3 py-1 rounded-full">
+                                        {g.category === "kegiatan" ? "Belajar" : g.category === "fasilitas" ? "Fasilitas" : g.category === "kebersamaan" ? "Kebersamaan" : "Ekstrakurikuler"}
+                                    </span>
+                                    <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
+                                        <ZoomIn class="w-4 h-4" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Meta Info -->
-                        <div class="p-6">
-                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase mb-3 border border-gold/10">
-                                {g.category === "kegiatan" ? "Belajar" : g.category === "fasilitas" ? "Fasilitas" : g.category === "kebersamaan" ? "Kebersamaan" : "Ekstrakurikuler"}
-                            </span>
+
+                        <!-- Card Meta Info -->
+                        <div class="p-6 border-t border-border/30 bg-white">
                             <h3 class="font-heading text-lg font-bold text-primary mb-2 leading-tight">{g.title}</h3>
                             <p class="text-xs text-muted leading-relaxed">{g.description}</p>
                         </div>
@@ -128,11 +159,12 @@ const galleryPlaceholders = [
                     btn.classList.remove('bg-background', 'text-muted', 'border-border/50');
                     btn.classList.add('bg-primary', 'text-white', 'border-primary', 'shadow-sm');
 
-                    // Filter items
+                    // Filter items with transition
                     galleryItems.forEach(item => {
                         const category = item.getAttribute('data-category');
                         if (filterValue === 'all' || category === filterValue) {
                             item.classList.remove('hidden');
+                            // Delay slightly for smooth transition
                             setTimeout(() => {
                                 (item as HTMLElement).style.opacity = '1';
                                 (item as HTMLElement).style.transform = 'scale(1)';
