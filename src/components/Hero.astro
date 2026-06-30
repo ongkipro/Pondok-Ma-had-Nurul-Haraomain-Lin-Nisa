@@ -1,0 +1,83 @@
+---
+import { BookOpen, Heart, Home, GraduationCap } from '@lucide/astro';
+---
+<!-- Hero Section -->
+<section class="relative min-h-[100svh] flex items-center pt-28 pb-24 overflow-hidden text-white">
+    <!-- Background Image full width & height -->
+    <div class="absolute inset-0 -z-10">
+        <img src="/images/mahad-hero.jpg" alt="Latar Belakang Ma'had Nurul Haromain" class="w-full h-full object-cover filter brightness-[0.35]">
+        <!-- Subtle gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/80"></div>
+    </div>
+    
+    <div class="max-w-5xl mx-auto px-6 md:px-12 w-full text-center relative z-10 py-12">
+        <div class="reveal active flex flex-col items-center">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-gold/20 text-gold border border-gold/30 font-semibold text-xs tracking-widest uppercase mb-8 backdrop-blur-sm">
+                Penerimaan Santriwati Baru 2026/2027
+            </span>
+            
+            <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl leading-[1.15] mb-6 max-w-4xl">
+                Mencetak <span class="text-gold italic font-medium">Generasi Rabbani</span> yang Shalihah & Terampil
+            </h1>
+            
+            <p class="text-white/80 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
+                Lembaga pendidikan Islam putri premium dengan sanad keilmuan murni Ahlussunnah wal Jama'ah dari Makkah Al-Mukarramah, pembinaan akhlak mulia, dan integrasi kurikulum diniyah-formal.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#ppdb" class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-gold text-primary text-base font-bold hover:bg-white hover:text-primary transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1">
+                    Daftar PPDB Online
+                </a>
+                <a href="#program" class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white text-base font-medium hover:bg-white/20 transition-all">
+                    Jelajahi Program
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Quote / Quran Verse Centered underneath -->
+        <div class="mt-16 inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 shadow-premium reveal reveal-delay-2 active mx-auto">
+            <p class="font-arabic text-2xl text-gold leading-none inline-block align-middle mr-3">رَبِّ زِدْنِي عِلْمًا</p>
+            <p class="text-xs text-white/70 uppercase tracking-widest inline-block align-middle">QS. Taha : 114</p>
+        </div>
+    </div>
+</section>
+
+<!-- Trust / Features Section (Overlapping) -->
+<section class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 -mt-10 mb-24 reveal active">
+    <div class="bg-card rounded-3xl shadow-premium border border-border/50 p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-border/50">
+            <!-- Item 1 -->
+            <div class="flex flex-col items-center text-center px-4">
+                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
+                    <BookOpen class="w-6 h-6" />
+                </div>
+                <h3 class="font-semibold text-primary mb-1">Sanad Makkah</h3>
+                <p class="text-sm text-muted">Ahlussunnah wal Jama'ah</p>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
+                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
+                    <Heart class="w-6 h-6" />
+                </div>
+                <h3 class="font-semibold text-primary mb-1">Adab & Akhlak</h3>
+                <p class="text-sm text-muted">Pembinaan karakter 24 jam</p>
+            </div>
+            <!-- Item 3 -->
+            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
+                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
+                    <Home class="w-6 h-6" />
+                </div>
+                <h3 class="font-semibold text-primary mb-1">Asrama Kondusif</h3>
+                <p class="text-sm text-muted">Pujon yang sejuk & aman</p>
+            </div>
+            <!-- Item 4 -->
+            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
+                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
+                    <GraduationCap class="w-6 h-6" />
+                </div>
+                <h3 class="font-semibold text-primary mb-1">Kurikulum Ganda</h3>
+                <p class="text-sm text-muted">Diniyah & Aliyah Terakreditasi</p>
+            </div>
+        </div>
+    </div>
+</section>

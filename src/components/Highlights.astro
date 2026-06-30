@@ -1,0 +1,74 @@
+---
+import { BookOpen, ShieldCheck, Globe, HeartHandshake, School, Layers } from '@lucide/astro';
+
+const highlights = [
+  {
+    title: "Sanad Keilmuan Murni",
+    description: "Mata rantai keilmuan bersambung langsung ke tanah suci Makkah melalui bimbingan keluarga Al-Maliki.",
+    icon: BookOpen
+  },
+  {
+    title: "Keamanan Asrama Terjamin",
+    description: "Lingkungan asrama putri tertutup dengan sistem keamanan dan pengawasan asatidz/murabbiyah 24 jam.",
+    icon: ShieldCheck
+  },
+  {
+    title: "Fokus Hadits & Bahasa",
+    description: "Spesialisasi kajian hadits primer (Kutubus Sittah) serta pembiasaan percakapan harian Bahasa Arab dan Inggris.",
+    icon: Globe
+  },
+  {
+    title: "Pembinaan Akhlak Mulia",
+    description: "Menitikberatkan keteladanan harian dan pengasuhan hati secara personal dari pembimbing.",
+    icon: HeartHandshake
+  },
+  {
+    title: "Lingkungan Asri & Sejuk",
+    description: "Terletak di pegunungan Pujon yang tenang, jauh dari hiruk-pikuk kota, ideal untuk konsentrasi belajar.",
+    icon: School
+  },
+  {
+    title: "Pendidikan Terintegrasi",
+    description: "Menggabungkan ijazah formal negara, hafalan Al-Qur'an, dan penguasaan kitab salaf dalam satu waktu.",
+    icon: Layers
+  },
+  {
+    title: "Fasilitas Belajar Standar Industri",
+    description: "Dilengkapi laboratorium komputer spesifikasi tinggi, laboratorium bahasa, serta bengkel busana bagi program SMK.",
+    icon: School
+  },
+  {
+    title: "Klinik Khusus Putri",
+    description: "Layanan kesehatan khusus terpisah untuk santriwati guna menjamin kenyamanan, privasi, dan kesiagaan medis.",
+    icon: ShieldCheck
+  }
+];
+---
+<!-- Why Choose Us -->
+<section class="py-24 bg-background border-y border-border/30">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-3 gap-12 items-start">
+        <div class="lg:col-span-1 lg:sticky lg:top-32 reveal">
+            <span class="text-gold font-semibold text-sm tracking-widest uppercase mb-4 block">Nilai Lebih</span>
+            <h2 class="font-heading text-4xl text-primary mb-6">Mengapa Memilih Lin Nisa'?</h2>
+            <p class="text-muted mb-8">Pendidikan terarah dengan bimbingan intensif dan kuota selektif demi menjaga kualitas tumbuh kembang setiap santriwati.</p>
+            <a href="#ppdb" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-all shadow-md">
+                Daftar Sekarang
+            </a>
+        </div>
+
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-x-8 gap-y-12">
+            {highlights.map((h) => {
+                const IconComponent = h.icon;
+                return (
+                    <div class="reveal">
+                        <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary mb-4 border border-border shadow-sm">
+                            <IconComponent class="w-6 h-6" />
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-primary mb-2">{h.title}</h3>
+                        <p class="text-sm text-muted leading-relaxed">{h.description}</p>
+                    </div>
+                );
+            })}
+        </div>
+    </div>
+</section>

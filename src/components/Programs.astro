@@ -1,0 +1,67 @@
+---
+import { Book, GraduationCap, Award, Laptop, Heart } from '@lucide/astro';
+
+const programs = [
+  {
+    title: "Madrasah Diniyyah Az-Zahra",
+    description: "Mengkaji kitab kuning (turats) dengan metode salaf, difokuskan pada tafsir, hadits, dan fiqih wanita.",
+    icon: Book,
+    tag: "Kitab Turats"
+  },
+  {
+    title: "Madrasah Aliyah (MA)",
+    description: "Pendidikan formal tingkat menengah atas yang terakreditasi nasional, mensinergikan sains dan iman.",
+    icon: GraduationCap,
+    tag: "Formal Kemendag"
+  },
+  {
+    title: "Tahfidz Daar Tanzil / Ribath Al-Hadi",
+    description: "Hafalan Al-Qur'an 30 juz secara intensif dengan metode mutqin, bersanad, dan bimbingan akhlak.",
+    icon: Award,
+    tag: "Hafalan & Sanad"
+  },
+  {
+    title: "SMK Nurul Haromain (Putri)",
+    description: "Pendidikan kejuruan putri dengan spesialisasi Teknik Jaringan Komputer & Telekomunikasi (TJKT) serta Desain Busana.",
+    icon: Laptop,
+    tag: "Kejuruan & Skill"
+  },
+  {
+    title: "Program KGTK",
+    description: "Program khusus kader pendidik anak usia dini yang berbekal akhlak Islami dan keilmuan agama yang kokoh.",
+    icon: Heart,
+    tag: "Kader Pendidik"
+  }
+];
+---
+<!-- Programs Section -->
+<section id="program" class="py-24 bg-background">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+            <span class="text-gold font-semibold text-sm tracking-widest uppercase mb-4 block">Kurikulum Terintegrasi</span>
+            <h2 class="font-heading text-4xl md:text-5xl text-primary mb-6">Program Pendidikan Putri</h2>
+            <p class="text-muted">Menyediakan jenjang pendidikan terpadu, memadukan pendalaman ilmu salaf, target hafalan Al-Qur'an, dan pendidikan umum.</p>
+        </div>
+
+        <div class="flex overflow-x-auto md:flex-wrap md:justify-center gap-8 max-w-6xl mx-auto snap-x snap-mandatory pb-6 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
+            {programs.map((p) => {
+                const IconComponent = p.icon;
+                return (
+                    <div class="bg-card rounded-2xl shadow-sm border border-border/50 overflow-hidden hover:shadow-premium-hover transition-all duration-300 transform hover:-translate-y-2 group reveal min-w-[280px] w-[80%] md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] flex flex-col justify-between shrink-0 snap-center">
+                        <div class="p-6 flex flex-col h-full">
+                            <!-- Icon and Tag Header Flow (prevents overlap) -->
+                            <div class="flex items-center justify-between gap-4 mb-6">
+                                <div class="w-12 h-12 bg-background shadow-md rounded-full flex items-center justify-center text-gold border border-border/30 shrink-0">
+                                    <IconComponent class="w-6 h-6" />
+                                </div>
+                                <span class="text-xs font-bold text-gold bg-gold/10 px-2.5 py-1 rounded-full uppercase border border-gold/10 whitespace-nowrap shrink-0">{p.tag}</span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-primary mb-3 leading-tight">{p.title}</h3>
+                            <p class="text-muted text-sm leading-relaxed">{p.description}</p>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
+    </div>
+</section>

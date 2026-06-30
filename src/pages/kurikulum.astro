@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Programs from '../components/Programs.astro';
+import Keterampilan from '../components/Keterampilan.astro';
+import Highlights from '../components/Highlights.astro';
+import PPDB from '../components/PPDB.astro';
+---
+
+<Layout title="Kurikulum & Program Pendidikan - Ma'had Nurul Haromain Lin Nisa'" description="Kurikulum terpadu diniyah salafiyah, tahfidz Al-Qur'an bersanad, sekolah formal MA, SMK Telekomunikasi & Tata Busana, serta program kemandirian santriwati.">
+    <div class="pt-24 bg-primary text-white text-center py-16">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Kurikulum & Program</h1>
+        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base">Membekali santriwati dengan ilmu salaf, hafalan quran, ijazah formal negara, & keterampilan hidup mandiri.</p>
+    </div>
+    
+    <Programs />
+    <Keterampilan />
+    <Highlights />
+    <PPDB />
+</Layout>

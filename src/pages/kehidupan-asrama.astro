@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BoardingLife from '../components/BoardingLife.astro';
+import Stats from '../components/Stats.astro';
+import Testimonials from '../components/Testimonials.astro';
+import PPDB from '../components/PPDB.astro';
+import { Home, Shield, Laptop, Scissors, BookOpen, HeartPulse } from '@lucide/astro';
+
+const facilities = [
+  {
+    title: "Asrama Nyaman & Kondusif",
+    description: "Kamar tidur bersih berkapasitas teratur, berudara sejuk alami pegunungan Pujon, dilengkapi kasur, lemari pribadi, dan sirkulasi udara optimal.",
+    icon: Home
+  },
+  {
+    title: "Klinik Medis Khusus Putri",
+    description: "Fasilitas pelayanan kesehatan mandiri di lingkungan pondok dengan tenaga medis perempuan standby demi menjaga kenyamanan dan privasi santriwati.",
+    icon: HeartPulse
+  },
+  {
+    title: "Laboratorium Komputer & TJKT",
+    description: "Laboratorium dengan komputer berspesifikasi tinggi, akses internet serat optik, dan perangkat jaringan untuk penunjang praktik produktif.",
+    icon: Laptop
+  },
+  {
+    title: "Bengkel Desain Busana",
+    description: "Ruang praktik khusus menjahit yang dilengkapi mesin jahit industri, meja pola, manekin, dan studio perancangan busana bagi program keterampilan.",
+    icon: Scissors
+  },
+  {
+    title: "Perpustakaan Kitab & Sains",
+    description: "Koleksi lengkap kitab turats (kitab kuning), buku pelajaran umum, ensiklopedia sains, serta area membaca mandiri yang hening dan tenang.",
+    icon: BookOpen
+  },
+  {
+    title: "Sistem Keamanan Terpadu",
+    description: "Gerbang asrama tunggal (single-gate system) khusus putri, dipagari tinggi, dengan pengawasan murabbiyah (ustazah pembimbing) 24 jam penuh.",
+    icon: Shield
+  }
+];
+---
+
+<Layout title="Kehidupan Asrama & Fasilitas - Ma'had Nurul Haromain Lin Nisa'" description="Kehidupan sehari-hari santriwati, agenda kegiatan ibadah dan belajar harian, serta fasilitas sarana prasarana asrama putri premium di Pujon, Malang.">
+    <div class="pt-24 bg-primary text-white text-center py-16">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Kehidupan Asrama</h1>
+        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base">Membentuk kebiasaan ibadah yang disiplin, adab akhlak mulia, kemandirian, dan ukhuwah islamiyah.</p>
+    </div>
+    
+    <BoardingLife />
+
+    <!-- Dedicated Facilities Section -->
+    <section class="py-24 bg-white border-t border-border/30">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-gold font-semibold text-sm tracking-widest uppercase mb-4 block">Sarana & Prasarana</span>
+                <h2 class="font-heading text-4xl text-primary mb-6">Fasilitas Utama Ma'had</h2>
+                <p class="text-muted">Dukungan infrastruktur belajar dan tempat tinggal yang bersih, aman, dan memadai untuk menunjang fokus pendidikan.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {facilities.map((f) => {
+                    const IconComp = f.icon;
+                    return (
+                        <div class="bg-background rounded-2xl p-8 border border-border/50 shadow-sm hover:shadow-premium-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between reveal">
+                            <div>
+                                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gold mb-6 border border-border shadow-sm">
+                                    <IconComp class="w-6 h-6" />
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-primary mb-3">{f.title}</h3>
+                                <p class="text-sm text-muted leading-relaxed">{f.description}</p>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    </section>
+
+    <Stats />
+    <Testimonials />
+    <PPDB />
+</Layout>

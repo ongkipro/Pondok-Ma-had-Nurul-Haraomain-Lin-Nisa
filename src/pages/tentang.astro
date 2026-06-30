@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+import Caretakers from '../components/Caretakers.astro';
+import History from '../components/History.astro';
+import Sanad from '../components/Sanad.astro';
+import PPDB from '../components/PPDB.astro';
+---
+
+<Layout title="Tentang Kami - Ma'had Nurul Haromain Lin Nisa'" description="Profil lengkap, pendiri, pembimbing utama, sanad keilmuan, dan nilai historis pendirian Ma'had Nurul Haromain Lin Nisa'.">
+    <div class="pt-24 bg-primary text-white text-center py-16">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Profil Pondok</h1>
+        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base">Mata Rantai Sanad Haramain, Akhlak Mulia, & Kurikulum Ganda Terintegrasi.</p>
+    </div>
+    
+    <About />
+    <Caretakers />
+    <History />
+    <Sanad />
+    <PPDB />
+</Layout>
