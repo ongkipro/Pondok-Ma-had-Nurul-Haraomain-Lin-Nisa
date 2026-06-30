@@ -42,41 +42,41 @@ import { BookOpen, Heart, Home, GraduationCap } from '@lucide/astro';
     </div>
 </section>
 
-<!-- Trust / Features Section (Overlapping) -->
-<section class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 -mt-10 mb-24 reveal active">
-    <div class="bg-card rounded-3xl shadow-premium border border-border/50 p-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-border/50">
+<!-- Trust / Features Section (Desktop: Card overlay, Mobile: Flat grid) -->
+<section class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 mt-12 md:-mt-10 mb-16 md:mb-24 reveal active">
+    <div class="bg-transparent md:bg-card md:rounded-3xl md:shadow-premium md:border md:border-border/50 p-0 md:p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-8 md:divide-x divide-border/50">
             <!-- Item 1 -->
-            <div class="flex flex-col items-center text-center px-4">
-                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
-                    <BookOpen class="w-6 h-6" />
+            <div class="flex flex-col items-center text-center px-2 md:px-4">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-background rounded-full flex items-center justify-center mb-3 md:mb-4 text-gold">
+                    <BookOpen class="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 class="font-semibold text-primary mb-1">Sanad Makkah</h3>
-                <p class="text-sm text-muted">Ahlussunnah wal Jama'ah</p>
+                <h3 class="font-semibold text-primary text-sm md:text-base mb-1">Sanad Makkah</h3>
+                <p class="text-xs md:text-sm text-muted">Ahlussunnah wal Jama'ah</p>
             </div>
             <!-- Item 2 -->
-            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
-                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
-                    <Heart class="w-6 h-6" />
+            <div class="flex flex-col items-center text-center px-2 md:px-4">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-background rounded-full flex items-center justify-center mb-3 md:mb-4 text-gold">
+                    <Heart class="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 class="font-semibold text-primary mb-1">Adab & Akhlak</h3>
-                <p class="text-sm text-muted">Pembinaan karakter 24 jam</p>
+                <h3 class="font-semibold text-primary text-sm md:text-base mb-1">Adab & Akhlak</h3>
+                <p class="text-xs md:text-sm text-muted">Pembinaan karakter 24 jam</p>
             </div>
             <!-- Item 3 -->
-            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
-                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
-                    <Home class="w-6 h-6" />
+            <div class="flex flex-col items-center text-center px-2 md:px-4">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-background rounded-full flex items-center justify-center mb-3 md:mb-4 text-gold">
+                    <Home class="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 class="font-semibold text-primary mb-1">Asrama Kondusif</h3>
-                <p class="text-sm text-muted">Pujon yang sejuk & aman</p>
+                <h3 class="font-semibold text-primary text-sm md:text-base mb-1">Asrama Kondusif</h3>
+                <p class="text-xs md:text-sm text-muted">Pujon yang sejuk & aman</p>
             </div>
             <!-- Item 4 -->
-            <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
-                <div class="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4 text-gold">
-                    <GraduationCap class="w-6 h-6" />
+            <div class="flex flex-col items-center text-center px-2 md:px-4">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-background rounded-full flex items-center justify-center mb-3 md:mb-4 text-gold">
+                    <GraduationCap class="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 class="font-semibold text-primary mb-1">Kurikulum Ganda</h3>
-                <p class="text-sm text-muted">Diniyah & Aliyah Terakreditasi</p>
+                <h3 class="font-semibold text-primary text-sm md:text-base mb-1">Kurikulum Ganda</h3>
+                <p class="text-xs md:text-sm text-muted">Diniyah & Aliyah Terakreditasi</p>
             </div>
         </div>
     </div>
