@@ -115,7 +115,43 @@ const {
             const menuIconSvg = document.getElementById('menu-icon-svg');
             const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
             const mobileLinks = document.querySelectorAll('.mobile-link');
+            const header = document.getElementById('header');
+            const logoText = header?.querySelector('.logo-text');
+            const navLinks = header?.querySelectorAll('.nav-link');
             let isMenuOpen = false;
+
+            function updateHeaderColors() {
+                const isScrolled = window.scrollY > 50;
+                const shouldBeDark = isScrolled || isMenuOpen;
+                
+                if (shouldBeDark) {
+                    if (logoText) {
+                        logoText.classList.remove('text-white');
+                        logoText.classList.add('text-primary');
+                    }
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('text-white');
+                        mobileMenuBtn.classList.add('text-primary');
+                    }
+                    navLinks?.forEach(link => {
+                        link.classList.remove('text-white/80', 'hover:text-white');
+                        link.classList.add('text-text-dark', 'hover:text-gold');
+                    });
+                } else {
+                    if (logoText) {
+                        logoText.classList.remove('text-primary');
+                        logoText.classList.add('text-white');
+                    }
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('text-primary');
+                        mobileMenuBtn.classList.add('text-white');
+                    }
+                    navLinks?.forEach(link => {
+                        link.classList.remove('text-text-dark', 'hover:text-gold');
+                        link.classList.add('text-white/80', 'hover:text-white');
+                    });
+                }
+            }
 
             function toggleMenu() {
                 isMenuOpen = !isMenuOpen;
@@ -142,6 +178,7 @@ const {
                     }
                     document.body.style.overflow = 'auto';
                 }
+                updateHeaderColors();
             }
 
             const closeMenuBtnInner = document.getElementById('close-menu-btn-inner');
@@ -176,7 +213,6 @@ const {
             });
 
             // 2. Header Scroll Effect
-            const header = document.getElementById('header');
             function handleScroll() {
                 if (window.scrollY > 50) {
                     header.classList.add('bg-background/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-border/50', 'py-3');
@@ -185,6 +221,7 @@ const {
                     header.classList.remove('bg-background/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-border/50', 'py-3');
                     header.classList.add('bg-transparent', 'py-4', 'is-top');
                 }
+                updateHeaderColors();
             }
             handleScroll();
             window.addEventListener('scroll', handleScroll);
