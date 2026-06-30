@@ -197,6 +197,7 @@ const {
             function toggleMenu() {
                 isMenuOpen = !isMenuOpen;
                 if (isMenuOpen) {
+                    if (header) header.classList.add('menu-open');
                     mobileMenu.classList.remove('-translate-y-full');
                     if (mobileMenuBackdrop) {
                         mobileMenuBackdrop.classList.remove('opacity-0', 'pointer-events-none');
@@ -208,6 +209,7 @@ const {
                     }
                     document.body.style.overflow = 'hidden';
                 } else {
+                    if (header) header.classList.remove('menu-open');
                     mobileMenu.classList.add('-translate-y-full');
                     if (mobileMenuBackdrop) {
                         mobileMenuBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
@@ -366,16 +368,16 @@ const {
 
     <style is:global>
         /* Header state styles when at the top of the page */
-        #header.is-top .nav-link {
+        #header.is-top:not(.menu-open) .nav-link {
             color: rgba(255, 255, 255, 0.9) !important;
         }
-        #header.is-top .nav-link:hover {
+        #header.is-top:not(.menu-open) .nav-link:hover {
             color: var(--color-gold) !important;
         }
-        #header.is-top .logo-text {
+        #header.is-top:not(.menu-open) .logo-text {
             color: #ffffff !important;
         }
-        #header.is-top #mobile-menu-btn {
+        #header.is-top:not(.menu-open) #mobile-menu-btn {
             color: #ffffff !important;
         }
         #header.is-top #nav-ppdb-btn {
