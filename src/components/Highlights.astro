@@ -56,16 +56,18 @@ const highlights = [
             </a>
         </div>
 
-        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-x-8 gap-y-12">
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-12">
             {highlights.map((h) => {
                 const IconComponent = h.icon;
                 return (
-                    <div class="reveal">
-                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3.5">
+                    <div class="reveal flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-1">
                             <IconComponent class="w-5 h-5" />
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-primary mb-2 leading-tight">{h.title}</h3>
-                        <p class="text-xs md:text-sm text-muted leading-relaxed">{h.description}</p>
+                        <div>
+                            <h3 class="font-heading text-base md:text-lg font-bold text-primary mb-1.5 leading-tight">{h.title}</h3>
+                            <p class="text-xs md:text-sm text-muted leading-relaxed">{h.description}</p>
+                        </div>
                     </div>
                 );
             })}
