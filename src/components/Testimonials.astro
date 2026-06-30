@@ -69,28 +69,33 @@ const getGradient = (index: number) => {
             <p class="text-muted text-sm md:text-base max-w-2xl mx-auto">Pengalaman dan kesaksian tulus dari orang tua/wali santriwati seputar perkembangan pendidikan, karakter, dan fasilitas asrama putri.</p>
         </div>
         
-        <!-- Mobile view: Flat circular profile list rows (No cards, no scroll, no borders) -->
-        <div class="block md:hidden space-y-6 reveal">
+        <!-- Mobile view: Sleek Cards with Shadows and Accents -->
+        <div class="block md:hidden space-y-5 reveal">
             {testimonials.map((t, idx) => (
-                <div class="flex gap-4 border-b border-border/10 pb-5 last:border-b-0 last:pb-0">
-                    <!-- Profile Photo or Initial Fallback -->
-                    {t.image ? (
-                        <div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border bg-background shadow-sm">
-                            <img src={t.image} alt={`Foto Profil Wali Santri ${t.name} - ${t.program}`} class="w-full h-full object-cover" width="48" height="48" loading="lazy" decoding="async" />
-                        </div>
-                    ) : (
-                        <div class={`w-12 h-12 rounded-full shrink-0 bg-gradient-to-tr ${getGradient(idx)} flex items-center justify-center text-white font-bold text-sm shadow-sm`}>
-                            {getInitials(t.name)}
-                        </div>
-                    )}
-                    <div class="flex-grow">
-                        <div class="flex items-center justify-between gap-2 mb-1">
-                            <h4 class="font-semibold text-primary text-sm">{t.name}</h4>
-                            <div class="flex text-gold text-xs">
+                <div class="bg-card rounded-2xl p-5 border border-border/40 shadow-[0_4px_20px_rgba(18,53,36,0.03)] flex flex-col justify-between active:scale-[0.98] transition-transform duration-300">
+                    <div>
+                        <!-- Header with profile & rating -->
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <!-- Profile Photo or Initial Fallback -->
+                                {t.image ? (
+                                    <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-gold/30 bg-background shadow-sm">
+                                        <img src={t.image} alt={`Foto Profil Wali Santri ${t.name} - ${t.program}`} class="w-full h-full object-cover" width="40" height="40" loading="lazy" decoding="async" />
+                                    </div>
+                                ) : (
+                                    <div class={`w-10 h-10 rounded-full shrink-0 bg-gradient-to-tr ${getGradient(idx)} flex items-center justify-center text-white font-bold text-xs shadow-sm`}>
+                                        {getInitials(t.name)}
+                                    </div>
+                                )}
+                                <div>
+                                    <h4 class="font-heading font-bold text-primary text-sm leading-tight">{t.name}</h4>
+                                    <p class="text-[10px] text-muted leading-tight mt-0.5">{t.program}</p>
+                                </div>
+                            </div>
+                            <div class="flex text-gold text-xs shrink-0">
                                 {Array.from({ length: t.rating }).map(() => <span>★</span>)}
                             </div>
                         </div>
-                        <p class="text-xs text-muted/80 mb-2">{t.program}</p>
                         <p class="text-xs text-muted italic leading-relaxed">"{t.text}"</p>
                     </div>
                 </div>

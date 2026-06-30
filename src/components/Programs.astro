@@ -43,19 +43,19 @@ const programs = [
             <p class="text-muted text-sm md:text-base">Menyediakan jenjang pendidikan terpadu, memadukan pendalaman ilmu salaf, target hafalan Al-Qur'an, dan pendidikan umum.</p>
         </div>
 
-        <!-- Mobile view: Sleek flat list rows (No cards, no borders, no shadows) -->
-        <div class="block md:hidden space-y-6 reveal">
+        <!-- Mobile view: Sleek Cards with Shadows and Accents -->
+        <div class="block md:hidden space-y-5 reveal">
             {programs.map((p) => {
                 const IconComponent = p.icon;
                 return (
-                    <div class="flex gap-4 border-b border-border/10 pb-5 last:border-b-0 last:pb-0">
-                        <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <div class="bg-white rounded-2xl p-5 border border-border/40 shadow-[0_4px_20px_rgba(18,53,36,0.03)] flex gap-4 active:scale-[0.98] transition-all duration-300">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-primary/80 text-white flex items-center justify-center shrink-0 shadow-md">
                             <IconComponent class="w-5 h-5" />
                         </div>
                         <div class="flex-grow">
                             <div class="flex items-center justify-between gap-2 mb-1.5">
                                 <h3 class="font-heading text-base font-bold text-primary leading-tight">{p.title}</h3>
-                                <span class="text-[9px] font-bold text-gold bg-gold/10 px-2 py-0.5 rounded-full uppercase border border-gold/10 whitespace-nowrap shrink-0">{p.tag}</span>
+                                <span class="text-[9px] font-bold text-gold bg-gold/10 px-2.5 py-0.5 rounded-full uppercase border border-gold/20 whitespace-nowrap shrink-0">{p.tag}</span>
                             </div>
                             <p class="text-xs text-muted leading-relaxed">{p.description}</p>
                         </div>
@@ -69,7 +69,9 @@ const programs = [
             {programs.map((p) => {
                 const IconComponent = p.icon;
                 return (
-                    <div class="bg-card rounded-2xl shadow-sm border border-border/50 overflow-hidden hover:shadow-premium-hover transition-all duration-300 transform hover:-translate-y-2 group min-w-[280px] w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] flex flex-col justify-between shrink-0">
+                    <div class="bg-card rounded-2xl shadow-premium border border-border/40 overflow-hidden hover:shadow-premium-hover hover:border-gold/30 transition-all duration-300 transform hover:-translate-y-2 group min-w-[280px] w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] flex flex-col justify-between shrink-0 relative">
+                        <!-- Decorative top accent bar -->
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-gold to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div class="p-6 flex flex-col h-full">
                             <!-- Icon and Tag Header -->
                             <div class="flex items-center justify-between gap-4 mb-6">
