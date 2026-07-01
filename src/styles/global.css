@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
+/* Metric-adjusted fallback so the fallback font occupies the same space as Inter,
+   eliminating layout shift (CLS) when the async web font swaps in. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0.00%;
+  size-adjust: 107.12%;
+}
+
 @theme {
   --color-primary: #123524;
   --color-secondary: #4E6E58;
   --color-gold: #B08D57;
+  --color-gold-ink: #8A6D3B;    /* AA-contrast gold for small text on light backgrounds */
+  --color-gold-on-dark: #BE9A61; /* AA-contrast gold for text on the dark primary background (footer) */
   --color-background: #FAF8F3;
   --color-card: #FFFFFF;
   --color-border: #EAE4D7;
@@ -12,7 +25,7 @@
   --color-success: #2E7D32;
 
   --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: Inter, system-ui, sans-serif;
+  --font-body: Inter, "Inter Fallback", system-ui, sans-serif;
   --font-arabic: Amiri, serif;
 
   --font-size-xs: 0.8125rem; /* 13px */
