@@ -17,6 +17,11 @@
 </div>
 </div>
 
+<br/>
+<p align="center">
+  🕌 <b>Muslim institutions</b> — need a website? &nbsp;→&nbsp; <a href="https://ongki.pro"><b>ongki.pro</b></a>
+</p>
+
 ---
 
 Repositori ini berisi kode sumber resmi untuk website company profile & portal PPDB **Ma'had Nurul Haromain Lin Nisa' (Pujon, Malang, Jawa Timur)** yang dibangun menggunakan framework modern **Astro** terintegrasi dengan **Tailwind CSS v4**.
@@ -123,13 +128,18 @@ npm run preview
 
 ## 🤝 Developer
 
-Crafted by **[Ongki](https://ongki.pro)**
+<div align="center">
 
-`Shopify` `Web Development` `Meta Ads` `Google Ads` `SEO` `Cloudflare` `Automation`
+**Crafted by [Ongki](https://ongki.pro)**
+
+🛒 `Shopify` · 🌐 `Web Development` · 📢 `Meta Ads` · 🔍 `Google Ads` · 📈 `SEO` · ☁️ `Cloudflare` · ⚡ `Automation`
+
+</div>
 
 ---
 
 ## 📄 License
 
 © 2026 **Ma'had Nurul Haromain Lin Nisa' Pujon, Malang, Jawa Timur**. All rights reserved.  
+Proprietary code — not for redistribution.
 Proprietary code — not for redistribution.
